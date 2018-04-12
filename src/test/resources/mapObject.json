@@ -1,0 +1,7 @@
+{
+   "prices": {
+   		"basic": 9.99,
+   		"premium": 53,
+   		"vip": 400
+   }
+}
