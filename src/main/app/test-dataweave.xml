@@ -79,4 +79,23 @@ result: {
 }]]></dw:set-payload>
         </dw:transform-message>
     </flow>
+    <flow name="test-dataweaveFilter">
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+  biggerThanTwo: [0, 1, 2, 3, 4, 5, 6] filter ($$ mod 2) ==1
+}]]></dw:set-payload>
+        </dw:transform-message>
+    </flow>
+    <flow name="test-dataweaveReduce">
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+summerValue: [1, 2, 3, 4, 5] reduce ($$ *$)
+]]></dw:set-payload>
+        </dw:transform-message>
+    </flow>
 </mule>
