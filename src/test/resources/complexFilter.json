@@ -1,0 +1,22 @@
+{
+     "id": "1",
+     "courseTitle": "Course A",
+     "optionGroups": [{
+         "id": "1x1",
+         "courseType": "Level 1",
+         "options": [{
+             "id": "AAAAA",
+             "studyMode": "FT"
+         }, {
+             "id": "BBBBB",
+             "studyMode": "PT"
+         }]
+     }, {
+         "id": "7b7",
+         "courseType": "Level 2",
+         "options": [{
+             "id": "CCCCC",
+             "studyMode": "PT"
+         }]
+     }]
+ }

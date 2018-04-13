@@ -98,4 +98,37 @@ summerValue: [1, 2, 3, 4, 5] reduce ($$ *$)
 ]]></dw:set-payload>
         </dw:transform-message>
     </flow>
+    <flow name="test-dataweavecomplexFilter">
+        <dw:transform-message doc:name="Transform Message" metadata:id="a22a7dd9-1d7c-46f7-a907-3541fdb80612">
+            <dw:input-payload doc:sample="complexFilter.json" mimeType="application/json"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+	id: payload.id,
+	courseTitle: payload.courseTitle,
+	optionGroup: payload.optionGroups map ((grp) ->
+		{
+			id: grp.id,
+			courseType: grp.courseType,
+			options: grp.options filter $.studyMode != 'PT'
+		}
+	) filter (sizeOf $.options) > 0
+}]]></dw:set-payload>
+        </dw:transform-message>
+    </flow>
+    <flow name="test-dataweaveTransformChildren">
+        <dw:transform-message doc:name="Transform Message" metadata:id="92ea25a8-e78f-42b8-a348-36c9d060b8a4">
+            <dw:input-payload doc:sample="child1.json" mimeType="application/json"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+payload.dependents map ((data, dataIdx) -> {
+	customer_id: payload.customer_id,
+	dependent_id: data.dependent_id,
+	gender: data.gender,
+	pii: data.pii
+})]]></dw:set-payload>
+        </dw:transform-message>
+    </flow>
 </mule>

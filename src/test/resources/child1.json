@@ -1,0 +1,30 @@
+{
+   "customer_id": "218313",
+   "gender": "male",
+   "pii": {
+     "name": "Taylor, Zachory",
+     "dob": "1987-01-25",
+     "ssn": "148-31-8543",
+     "email": "zack_taylor@hotmail.com"
+   },
+   "dependents": [{
+     "dependent_id": "287375",
+     "gender": "female",
+     "pii": {
+       "dob": "2007-05-19",
+       "ssn": "149-33-5634",
+       "name": "Taylor, Sarah",
+       "email": "sarah_taylor@hotmail.com"
+     }
+   },
+   {
+     "dependent_id": "287391",
+     "gender": "male",
+     "pii": {
+       "dob": "2008-09-15",
+       "ssn": "149-34-3341",
+       "name": "Taylor, Rory",
+       "email": "rory_taylor@hotmail.com"
+     }
+   }]
+ }
